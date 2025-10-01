@@ -65,15 +65,15 @@ main {
 .hero {
     background-color: #C45D00;
     padding: 20px;
-    max-width: 90vw;
+    max-width: 100vw;
     height: 60vh;
     text-align: center;
-    border-radius: 10px;
-    margin:40px auto;
-    background-image: linear-gradient( #c481468d, rgba(0, 0, 0, 0.773) ), url('images/PerroEscarba.jpg');
+    background-image: linear-gradient( #c481468d, rgba(0, 0, 0, 0.6) ), url('images/PerroEscarba.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 .navbar .logo {
