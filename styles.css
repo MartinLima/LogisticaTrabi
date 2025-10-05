@@ -8,7 +8,13 @@ body {
 }
 
 header {
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(31, 31, 32, 0.85);
+    backdrop-filter: blur(10px);
 }
 
 main {
@@ -18,39 +24,44 @@ main {
 
 /* Navbar */
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: sticky;
     top: 0;
-    background-color: #1F1F20;
     padding: 0px;
     z-index: 10;
-    }
+}
 
-.navbar ul{
+.navbar ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
-    gap:50px;
+    gap: 50px;
     border: 2px #C45D00 solid;
-    padding: 10px;
-    border-radius: 30px;
-    width: 50%;
+    padding: 8px 20px;
+    border-radius: 50px;
+    width: 60%;
+    max-width: 800px;
     box-shadow: 0px 5px 15px black;
+    margin: 0 auto;
+    /* ADD the background-color here */
+    background-color: #1F1F20; 
 }
 
 .navbar li a {
-    color:rgb(185, 182, 182);
-    cursor:pointer;
+    color: rgb(185, 182, 182);
+    cursor: pointer;
     text-decoration: none;
-    transition: 0.5s ease; 
+    transition: 0.5s ease;
     font-weight: 700;
-    transition: .5s ease;
     font-size: 1.1em;
+    padding: 5px 0;
 }
+
 
 .navbar li{
     list-style: none;
@@ -118,7 +129,7 @@ span{
     margin: 60px auto 40px auto;
     width: 100%;
     text-align: center;
-    background: linear-gradient(90deg,#f7f7f7 40%, #ffffff6e 100%);
+    background: linear-gradient(90deg,#F2F1EE 40%, #ffffff6e 100%);
     border-radius: 30px;
     overflow: hidden;
     
@@ -129,7 +140,7 @@ span{
     max-width:80vh;
     max-height: 80vh;
     border-radius: 20px;
-    transform: scale(1.5);
+    transform: scale(1.3);
     position: relative;
     object-fit: cover;
 }
@@ -137,19 +148,19 @@ span{
 .quienes-somos-imagen-container {
     position: relative;
     overflow: hidden;
-    transform: translateY(120px);
+    transform: translateY(80px);
 }
 
-.textos-qns{
+.quienes-somos-section-container {
     width: 50%;
     font-size: 1.3em;
     display: flex;
-    flex:wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: start;
     flex-direction: column;
-    color:  rgb(31, 31, 32);
+    color:  rgb(32, 32, 39);
     font-weight: 600;
 }
 
