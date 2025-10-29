@@ -453,14 +453,15 @@ span{
 .btn-contacto{
     background-color: #0c0c0eab;
     color: rgba(255, 255, 255, 0.643);
-    border: 1px solid #C45D00;
-    padding: 20px 20px;
+    /* border: 1px solid black; */
+    padding: 15px 15px;
     font-size: 1.4em;
     border-radius: 30px;
-    font-weight: 700;
+    font-size: 1.4em;
+    font-weight:lighter;
     cursor: pointer;
     transition: 0.3s ease;
-    box-shadow: 0px 5px 15px black;
+    /* box-shadow: 0px 5px 15px black; */
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -468,8 +469,8 @@ span{
 .btn-contacto:hover{
     background-color: #0f0f0fa4;
     color: #ffffff;
-    font-weight: 700;
-    box-shadow: 0px 5px 15px #c45c00ab;
+    /* font-weight: 700; */
+    box-shadow: 0px 2px 15px rgba(8, 204, 8, 0.582);
 }
 
 .btn-contacto .wsp-icon {
