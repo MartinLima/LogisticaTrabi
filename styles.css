@@ -165,6 +165,25 @@ span{
     animation: underlineGrow 1s ease-out 0.8s forwards;
 }
 
+.Sl::before {
+    content: "";
+    position: absolute;
+    bottom: -5vw; 
+    left: calc(50% + 15vw); 
+    width: 10vw; 
+    height: 10vw; 
+    max-width: 80px; 
+    max-height: 80px;
+    min-width: 40px; 
+    min-height: 40px; 
+    background-image: url('images/truck-svgrepo-com (2).svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(-15vw); 
+    animation: truck-appear 0.9s ease 1.15s forwards;
+}
+
 /* Span secundario */
 .Sl span {
     display: block;
@@ -290,6 +309,7 @@ span{
     overflow: hidden;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
+
 .product-card:hover {
     box-shadow: 0px 0px 15px rgba(236, 113, 31, 0.7);
 }
@@ -627,6 +647,13 @@ footer {
     to { width: 60%; }
 }
 
+@keyframes truck-appear {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes flotar {
     0%, 100% {
         transform: translateY(0);
@@ -796,6 +823,13 @@ footer {
         text-align: center;
     }
 
+    .Sl::before {
+        left: calc(50% + 30% + 10px);
+        bottom: -30px;
+        width: 50px;
+        height: 50px;
+    }
+
 
 }
 
@@ -814,12 +848,18 @@ footer {
         height: 60vh;
     }
 
+    .Sl::before {
+        bottom: -5vw;
+        left: calc(50% + 15vw);
+        width: 10vw;
+        height: 10vw;
+    }
+
 
     .quienes-somos-section-container {
         font-size: 1em;
     }
-
-    .quienes-somos-titulo-container h2 {
+.quienes-somos-titulo-container h2 {
         font-size: 1.8em;
     }
     
@@ -875,3 +915,11 @@ footer {
     }
 }
 
+@media (min-width: 769px) {
+    .Sl::before {
+        left: calc(50% + 30% + 10px); /* Positioned next to the underline with a gap */
+        bottom: -38px; /* Vertically centered with the line */
+        width: 60px;
+        height: 60px;
+    }
+}
