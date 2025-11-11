@@ -38,7 +38,7 @@ main {
     z-index: 10;
 }
 
-.navbar ul {
+.nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +53,25 @@ main {
     margin: 0 auto;
     background-color: #1F1F20; 
 }
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    top: 15px;
+    right: 20px;
+    z-index: 21;
+    position: fixed;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 
 .navbar li a {
     color: rgb(185, 182, 182);
@@ -610,7 +629,7 @@ footer {
 
 /* Laptops (hasta 1024px) */
 @media (max-width: 1024px) {
-    .navbar ul {
+    .nav-links {
         width: 80%;
         gap: 30px;
     }
@@ -619,6 +638,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
 
     .quienes-somos-section-container {
         text-align: center;
@@ -633,17 +653,33 @@ footer {
     }
 }
 
+
 /* Tablets (hasta 768px) */
 @media (max-width: 768px) {
-    .navbar ul {
-        width: 90%;
-        gap: 20px;
-        padding: 8px 15px;
-        flex-wrap: wrap;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(31, 31, 32, 0.95);
+        border: none;
+        border-radius: 0;
+        padding: 20px 0;
+        gap: 25px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
     }
 
     .navbar li a {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .contacto {
@@ -651,6 +687,7 @@ footer {
         padding-top: 100px;
         padding-bottom: 100px;
     }
+
 
     .contacto-texto {
         flex-direction: column;
@@ -699,23 +736,11 @@ footer {
     }
 }
 
+
 /* Mobile devices (hasta 480px) */
 @media (max-width: 480px) {
     header {
         padding: 5px 0;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 15px;
-        width: 90%;
-        border-radius: 30px;
-        padding: 20px 10px;
-    }
-
-    .navbar .logo {
-        order: -1; 
-        margin-bottom: 10px;
     }
 
     .Sl {
@@ -725,6 +750,7 @@ footer {
     .hero {
         height: 60vh;
     }
+
 
     .quienes-somos-section-container {
         font-size: 1em;
