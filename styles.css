@@ -115,11 +115,11 @@ main {
     text-align: center;
     background-image: linear-gradient(
         to bottom,
-        rgba(0,0,0,0.6) 20%,
-        rgba(0,0,0,0.9) 100%
-    ), url('images/PerroEscarba.jpg');
+        rgba(0,0,0,0.5) 20%,
+        rgba(0,0,0,0.8) 100%
+    ), url('images/Gemini_Generated_Image_bfc16ybfc16ybfc1\ \(1\).png');
     background-size: cover;
-    background-position: center;
+    background-position: center 20%;
     background-repeat: no-repeat;
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
@@ -144,7 +144,7 @@ span{
     font-size: clamp(3rem, 8vw, 9rem);
     letter-spacing: 6px;
     margin: 0;
-    color: #ddd;
+    color: #EEEEEE;
     text-transform: uppercase;
     line-height: 0.7em;
     text-shadow: 0 4px 12px rgba(0,0,0,0.6);
@@ -187,13 +187,11 @@ span{
 /* Span secundario */
 .Sl span {
     display: block;
-    font-size: 0.4em;
+    font-size: 0.45em;
     font-style: normal;
     font-weight: 800;
-    letter-spacing: 0.3em;
-    color: transparent;
-    background: linear-gradient(180deg, #ff8a00, #ffffff);
-    -webkit-background-clip: text;
+    letter-spacing: 0.2em;
+    color: #ce8a3c;
     background-clip: text;
     margin-top: 0.3em;
     animation: fadeSlide 1.2s ease-out;
@@ -255,13 +253,27 @@ span{
 }
 
 .quienes-somos-titulo-container h2 {
-    color: #C45D00;
-    font-size: 2.3em;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
+    color: #e27b21;
     font-family: 'Overpass', sans-serif;
-    font-weight: 900;
-    text-shadow: 0 2px 8px #fff3, 0 1px 0 #fff8;
+    font-weight: 800;
+    font-size: 2.3em;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425); /* Sombra dura pero sutil */
+}
+
+/* línea decorativa debajo */
+.quienes-somos-titulo-container h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 8em; 
+    height: 4px;
+    background-color: #202d3a; 
+    border-radius: 2px;
 }
 
 /* --- SECCIÓN DE PRODUCTOS  --- */
@@ -667,23 +679,49 @@ footer {
 /* Media Queries */
 /* ------------------- */
 
-/* Desktops (hasta 1200px) */
-@media (max-width: 1200px) {
-    .navbar ul {
+/* Desktops grandes (a partir de 1440px) */
+
+@media (min-width: 1440px) {
+    .nav-links {
         width: 70%;
+        gap: 40px;
+    }
+
+    .quienes-somos {
+        flex-direction: row;
+        align-items: center;
+        padding: 2em;
+    }
+
+    .quienes-somos-section-container {
+        text-align: center;
+        align-items: center;
+        padding: 2em;
+    }
+
+    .ft-QS {
+        max-height: 50vh;
+        transform: scale(1.15);
+    }
+
+    .Sl::before {
+        bottom: -2vw;
+        left: calc(50% + 7vw);
+        width: 3vw;
+        height: 3vw;
     }
 }
 
-/* Laptops (hasta 1024px) */
-@media (max-width: 1024px) {
+/* Laptops (a partir de 1180px) */
+@media (min-width: 1180px) and (max-width: 1439px) {
     .nav-links {
         width: 80%;
         gap: 30px;
     }
 
     .quienes-somos {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        align-items: center
     }
 
 
@@ -695,10 +733,60 @@ footer {
 
     .ft-QS {
         max-height: 40vh;
-        transform: scale(1);
-        padding: 20px;
+        transform: scale(1.5);
+        padding: 1rem;
+    }
+
+    .Sl::before {
+        bottom: -3vw;
+        left: calc(50% + 7vw);
+        width: 4vw;
+        height: 4vw;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1179px) {
+    
+    .hero {
+        height: 120vw; 
+    }
+
+    .Sl {
+        font-size: clamp(4rem, 12vw, 7rem);
+    }
+
+
+    .Sl span {
+        font-size: 0.55em;
+    }
+
+
+    .Sl::before {
+        left: calc(50% + 14vw); 
+        width: 70px;
+        height: 70px;
+        bottom: -6vw;
+    }
+
+
+    .nav-links {
+        width: 90%; 
+        gap: 20px; 
+    }
+
+    .navbar li a {
+        font-size: 1em; 
+    }
+    
+
+    .quienes-somos-section-container {
+        text-align: center;
+        align-items: center;
+        padding: 40px 20px;
     }
 }
+
 
 
 @media (max-width: 768px) {
@@ -750,6 +838,12 @@ footer {
         padding: 0px;
         width: 300px;
         height: auto;
+    }
+
+    .ft-QS{
+        height: auto;
+        width: auto;
+        padding-bottom: 3em;
     }
 
     .product-card {
@@ -823,13 +917,25 @@ footer {
         text-align: center;
     }
 
-    .Sl::before {
-        left: calc(50% + 30% + 10px);
-        bottom: -30px;
-        width: 50px;
-        height: 50px;
+    .Sl {
+        font-size: clamp(5rem, 16vw, 9rem);
     }
 
+    .Sl span {
+        font-size: 0.5em; 
+        margin-top: 0.2em; 
+    }
+
+    .hero {
+        height: 150vw;
+    }
+
+    .Sl::before {
+        bottom: -4vw;
+        left: calc(50% + 16vw);
+        width: 5vw;
+        height: 5vw;
+    }
 
 }
 
@@ -841,16 +947,22 @@ footer {
     }
 
     .Sl {
-        font-size: clamp(2.5rem, 15vw, 4rem);
+        font-size: clamp(3.2rem, 18vw, 5rem);
+
     }
 
     .hero {
-        height: 60vh;
+        height: 55vh;
+    }
+
+    .Sl span {
+        font-size: 0.55em; 
+        margin-top: 0.2em; 
     }
 
     .Sl::before {
-        bottom: -5vw;
-        left: calc(50% + 15vw);
+        bottom: -8vw;
+        left: calc(50% + 19vw);
         width: 10vw;
         height: 10vw;
     }
@@ -859,6 +971,7 @@ footer {
     .quienes-somos-section-container {
         font-size: 1em;
     }
+
 .quienes-somos-titulo-container h2 {
         font-size: 1.8em;
     }
@@ -897,13 +1010,16 @@ footer {
         font-size: 1.3em;
     }
 
-  
 }
 
 /* Small mobile devices (hasta 320px) */
 @media (max-width: 320px) {
     .Sl {
-        font-size: clamp(2rem, 15vw, 3rem);
+        font-size: clamp(3rem, 17vw, 4rem);
+    }
+
+    .hero {
+        height: 110vw;
     }
 
     .quienes-somos-titulo-container h2 {
@@ -913,13 +1029,11 @@ footer {
     .product-info-container h3 {
         font-size: 1.2rem;
     }
-}
 
-@media (min-width: 769px) {
     .Sl::before {
-        left: calc(50% + 30% + 10px); /* Positioned next to the underline with a gap */
-        bottom: -38px; /* Vertically centered with the line */
-        width: 60px;
-        height: 60px;
+        bottom: -10vw;
+        left: calc(50% + 19vw);
+        width: 10vw;
+        height: 10vw;
     }
 }
