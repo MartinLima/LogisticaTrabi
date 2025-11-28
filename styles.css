@@ -60,13 +60,13 @@ main {
     cursor: pointer;
     top: 15px;
     right: 20px;
-    z-index: 21;
+    z-index: 15;
     position: fixed;
 }
 
 .hamburger-menu .bar {
     width: 25px;
-    height: 3px;
+    height: 4px;
     background-color: white;
     margin: 4px 0;
     transition: 0.4s;
@@ -78,7 +78,7 @@ main {
 }
 
 .hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(17px) rotate(45deg);
 }
 
 .hamburger-menu.active .bar:nth-child(3) {
@@ -790,18 +790,28 @@ footer {
 
 
 @media (max-width: 768px) {
+    /* Ajustes para que el menú ocupe toda la pantalla sin heredar la forma de "pastilla" */
     .nav-links {
+        font-size: small;
         position: fixed;
         left: -100%;
         top: 0;
-        gap: 0;
+        gap: 20px; /* Un poco más de espacio entre enlaces */
         flex-direction: column;
-        background-color: #1F1F20;
-        width: 100%;
-        height: 100vh;
+        background-color: #1F1F20; /* Mantiene tu color de fondo */
+        width: 28%;
+        height: 60vh;
         text-align: center;
         transition: 0.3s;
-        justify-content: space-evenly;
+        justify-content: center; /* Centrado verticalmente */
+        
+        /* ESTAS SON LAS LÍNEAS CLAVE PARA ARREGLARLO: */
+        max-width: none;    /* Quita el límite de ancho del escritorio */
+        border:  #E27B21 solid;       /* Quita el borde naranja en modo pantalla completa */
+        border-radius: 20px;   /* Quita las esquinas redondas */
+        box-shadow:#232325 ;   /* Quita la sombra flotante */
+        padding: 0;         /* Resetea el padding */
+        z-index: 14;        /* Asegura que esté por encima de todo, pero debajo del botón hamburguesa */
     }
 
     .nav-links.active {
@@ -810,18 +820,20 @@ footer {
 
     .hamburger-menu {
         display: flex;
+        /* Aseguramos que el botón siempre se vea sobre el menú abierto */
+        z-index: 15; 
     }
 
     .navbar li a {
-        font-size: 1.2em;
+        font-size: 1.5em; /* Un poco más grande para mejor lectura en móvil */
     }
 
+    /* Ajustes de tus otras secciones para móvil (se mantienen igual que tu original) */
     .contacto {
         height: auto;
         padding-top: 100px;
         padding-bottom: 100px;
     }
-
 
     .contacto-texto {
         flex-direction: column;
@@ -832,18 +844,20 @@ footer {
         height: auto;
     }
 
-    .quienes-somos-imagen-container{
-        margin-left: 80px;
-        margin-bottom: -60px;
+    .quienes-somos-imagen-container {
+        margin-left: 0; /* Corregido para centrar mejor en móvil */
+        margin-bottom: 0;
         padding: 0px;
-        width: 300px;
-        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
-    .ft-QS{
+    .ft-QS {
         height: auto;
-        width: auto;
-        padding-bottom: 3em;
+        width: 80%; /* Ajuste para que la imagen no se desborde */
+        padding-bottom: 2em;
+        object-fit: contain;
     }
 
     .product-card {
@@ -851,7 +865,7 @@ footer {
         text-align: center;
     }
 
-    .product-image-container img{
+    .product-image-container img {
         max-width: 50%;
     }
 
@@ -862,7 +876,7 @@ footer {
         font-size: x-large;
     }
 
-    .availability-logo{
+    .availability-logo {
         width: 6rem;
         height: 6rem;
     }
@@ -871,14 +885,14 @@ footer {
         width: auto;
         border-right: none;
         border-bottom: 1px solid #444;
-        box-sizing: border-box; 
+        box-sizing: border-box;
     }
-    
+
     .product-info-container {
         padding: 20px;
         align-items: center;
     }
-    
+
     .product-info-container h3 {
         font-size: 1.6rem;
     }
@@ -888,7 +902,7 @@ footer {
         padding-top: 15px;
     }
 
-    .contacto{
+    .contacto {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -912,7 +926,7 @@ footer {
         justify-content: center;
         align-items: stretch;
     }
-    
+
     .copyright {
         text-align: center;
     }
@@ -922,8 +936,8 @@ footer {
     }
 
     .Sl span {
-        font-size: 0.5em; 
-        margin-top: 0.2em; 
+        font-size: 0.5em;
+        margin-top: 0.2em;
     }
 
     .hero {
@@ -936,7 +950,6 @@ footer {
         width: 5vw;
         height: 5vw;
     }
-
 }
 
 
@@ -953,6 +966,10 @@ footer {
 
     .hero {
         height: 55vh;
+    }
+
+    .nav-links{
+        height: 40vh;
     }
 
     .Sl span {
