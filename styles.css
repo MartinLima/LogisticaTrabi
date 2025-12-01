@@ -147,7 +147,7 @@ span{
     color: #EEEEEE;
     text-transform: uppercase;
     line-height: 0.7em;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     animation: fadeBlur 1.2s ease-out;
     position: relative;
 }
@@ -201,6 +201,56 @@ span{
     font-size: 1.2em;
     max-width: 600px;
     color: whitesmoke;
+}
+
+.main__action {
+    display: none;
+    margin: 0 auto;
+}
+
+.main__scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main__scroll-box {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce 2s infinite;
+}
+
+.main__scroll-box svg {
+    width: 24px;
+    height: 24px;
+}
+
+.main__scroll-text {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 /* Sección de quienes somos */
@@ -960,16 +1010,17 @@ footer {
         align-items: center;
         padding: 40px 20px;
     }
-
     .cta-text {
     font-size: 1.2rem;
+    }
+
 }
 
 .btn-contacto {
     padding: 1rem 3rem;
     font-size: 1.1rem;
 }
-}
+
 
 /* TABLETS Y MÓVILES (Aquí está el cambio principal para Contacto) */
 @media (max-width: 768px) {
@@ -1174,6 +1225,11 @@ footer {
     width: 2.5rem;
     height: 2.5rem;
     padding-left: 0.5rem;
+}
+
+.main__action {
+    display: block;
+    margin-top: 5rem;
 }
 
 }
