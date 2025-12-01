@@ -1038,14 +1038,14 @@ footer {
     }
 
     .Sl {
-        margin-top: 1em;
+        margin-top: 1.3em;
+        font-size: clamp(3.5rem, 15vw, 6rem);
     }
 
-    /*
     .Sl span {
         font-size: 0.6em;
         margin-top: 0.2em;
-    }*/
+    }
 
     .hero {
         height: 150vw;
@@ -1094,7 +1094,7 @@ footer {
 
 .main__action {
     display: block;
-    margin-top: 5rem;
+    margin-top: 8rem;
 }
 
 }
@@ -1106,7 +1106,7 @@ footer {
     }
 
     .Sl {
-        font-size: clamp(3.2rem, 18vw, 5rem);
+        font-size: clamp(3rem, 18vw, 5rem);
     }
 
     .hero {
@@ -1119,7 +1119,6 @@ footer {
     }
 
     .Sl span {
-        font-size: 0.55em; 
         margin-top: 0.2em; 
     }
 
@@ -1165,6 +1164,10 @@ footer {
     
     .card h3 {
         font-size: 1.25rem; /* Asegurar legibilidad del título */
+    }
+
+    .main__scroll {
+        margin-bottom: 3.5rem;
     }
     /* ------------------------------------------------- */
 }
