@@ -1124,7 +1124,7 @@ footer {
 
     .Sl::before {
         bottom: -8vw;
-        left: calc(50% + 21vw);
+        left: calc(50% + 23vw);
         width: 10vw;
         height: 10vw;
     }
