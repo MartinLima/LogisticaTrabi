@@ -147,7 +147,7 @@ span{
     color: #EEEEEE;
     text-transform: uppercase;
     line-height: 0.7em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     animation: fadeBlur 1.2s ease-out;
     position: relative;
 }
@@ -1093,7 +1093,7 @@ footer {
 
 .main__action {
     display: block;
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 }
@@ -1109,7 +1109,7 @@ footer {
     }
 
     .hero {
-        height: 62vh;
+        height: 80vh;
         text-shadow: 0 3px 8px rgba(0,0,0,0.3);
     }
 
@@ -1175,7 +1175,7 @@ footer {
     }
 
     .hero {
-        height: 110vw;
+        height: 150vw;
     }
 
     .quienes-somos-titulo-container h2 {
