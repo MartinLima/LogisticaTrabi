@@ -147,7 +147,7 @@ span{
     color: #EEEEEE;
     text-transform: uppercase;
     line-height: 0.7em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
     animation: fadeBlur 1.2s ease-out;
     position: relative;
 }
@@ -191,7 +191,7 @@ span{
     font-style: normal;
     font-weight: 800;
     letter-spacing: 0.2em;
-    color: #ce8a3c;
+    color: #ca8536;
     background-clip: text;
     margin-top: 0.3em;
     animation: fadeSlide 1.2s ease-out;
@@ -507,138 +507,6 @@ span{
 
 
 /* Contacto */
-/*
-.contacto{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 20px;
-    height: 70vh;
-    padding: 50px 20px;
-    text-align: center;
-    color: #fff;
-    gap: 50px;
-    margin-bottom: 50px;
-}
-
-.contacto::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-        to top,
-        rgba(102, 101, 101, 0.363) 80%,
-        rgba(100, 100, 100, 0.658) 100%
-    ), url('images/perritoConLentes.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0.6);
-    z-index: -1;
-    border-radius: 20px;
-}
-
-.contacto-texto{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 40px;
-    font-size: 1.3em;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.contacto-titulo-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 250px;
-    border-radius: 20px;
-    padding: 20px;
-    animation: flotar 3s ease-in-out infinite;
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.58);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    transition: transform 2s ease, box-shadow 0.6s ease;
-    cursor: pointer;
-}
-
-.contacto-titulo-container:hover {
-    transform: translateY(-5px);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 0px 30px rgba(236, 113, 31, 0.7);
-}
-.contacto-titulo-container p {
-    font-size: 1em; 
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: translateY(20px);
-}
-.contacto-titulo-container:hover p {
-    opacity: 1;
-    transform: translateY(0);
-}
-.contacto-titulo-container h4 {
-    background: linear-gradient(90deg, #ee7b16, #e5aa67);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
-    font-weight: 900;
-    font-size: 1.2em;
-    margin: 0;
-    transition: transform 0.4s ease;
-}
-.contacto-titulo-container:hover h4 {
-    transform: translateY(-10px);
-}
-.btn-contacto{
-    background-color: #0c0c0eab;
-    color: rgba(255, 255, 255, 0.643);
-    border: black;
-    box-shadow: 0px 3px 10px black;
-    padding: 15px 15px;
-    font-size: 1.4em;
-    border-radius: 30px;
-    font-size: 1.4em;
-    font-weight:lighter;
-    cursor: pointer;
-    transition: 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-.btn-contacto:hover{
-    background-color: #0f0f0fa4;
-    color: #ffffff;
-    box-shadow: 0px 2px 15px rgba(8, 204, 8, 0.582);
-}
-
-.btn-contacto .wsp-icon {
-    opacity: 0;
-    transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
-    width: 0;
-    height: 0;
-}
-
-.btn-contacto:hover .wsp-icon {
-    opacity: 1;
-    width: 21px;
-    height: 21px;
-    color: rgb(8, 204, 8);
-} 
-
-*/
 
 :root {
     --color-primary: #dd830d;
@@ -656,21 +524,19 @@ span{
 /* --- Configuración de la Sección General ---  */
 
 .contacto-section {
-    /* Padding vertical relativo al alto de pantalla (vh) y horizontal relativo al ancho (%) */
     padding: 5vh 5%; 
     background: linear-gradient(165deg, #75623d, #07152e);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Asegura que ocupe al menos un poco de espacio vertical */
     min-height: 40vh; 
+    border-radius: 1.5rem;
 }
 
 .title-container h2 {
     color: white;
     text-align: center;
-    /* Tipografía fluida: Mínimo 1.8rem, ideal 4% del ancho pantalla, máximo 2.5rem */
     font-size: clamp(1.8rem, 4vw, 2.5rem); 
     text-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
 }
@@ -678,13 +544,11 @@ span{
 /* --- Contenedor Grid para las Tarjetas --- */
 .cards-container {
     display: grid;
-    /* El ancho mínimo de tarjeta ahora es relativo (16rem = aprox 256px) */
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); 
-    gap: 4rem;
+    gap: 3rem;
     width: 100%;
-    /* Máximo ancho en rems para pantallas gigantes */
     max-width: 85rem; 
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 /* --- Estilo de cada Tarjeta (Card) --- */
@@ -698,11 +562,11 @@ span{
     box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     position: relative;
-    height: 80%; 
+    height: 80%;
 }
 
 .card:hover {
-    transform: translateY(-0.3rem);
+    transform: translateY(-0.5rem);
 }
 
 
@@ -765,10 +629,9 @@ span{
 }
 
 .btn-contacto {
-    background-color: #2ed16f;
+    background-color: #25b65f;
     color: white;
     border: none;
-    /* Padding dinámico */
     padding: 1rem 2.5rem; 
     border-radius: 0.5rem;
     font-size: 1.1rem;
@@ -781,15 +644,34 @@ span{
     transition: background-color 0.3s, transform 0.2s;
 }
 
+.btn-contacto span {
+    font-size: 1rem;
+}
+
 .btn-contacto:hover {
-    background-color: #25a859;
-    transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+    background-color: #208b4b;
+    transform: scale(1.05);
 }
 
 .wsp-icon {
     width: 1.4rem;
     height: 1.4rem;
     fill: currentColor;
+}
+
+.cta-container {
+    padding: 0 2rem;
+}
+
+.cta-text {
+    font-size: 1.5rem; /* Texto más grande */
+    margin-bottom: 1.5rem;
+}
+
+
+.wsp-icon {
+    width: 1.8rem; /* Icono proporcional */
+    height: 1.8rem;
 }
 
 /* footer */
@@ -820,7 +702,7 @@ footer {
 }
 
 .designed-by {
-    color: #333; /* Muy discreto sobre el fondo del footer */
+    color: #333;
     font-size: 0.8em;
     margin: 0;
     text-align: right;
@@ -921,27 +803,8 @@ footer {
         width: 3vw;
         height: 3vw;
     }
-}
 
-.cta-container {
-    padding: 0 2rem;
-}
 
-.cta-text {
-    font-size: 1.5rem; /* Texto más grande */
-    margin-bottom: 1.5rem;
-}
-
-.btn-contacto {
-    padding: 1.2rem 4rem; /* Botón más grande y ancho */
-    font-size: 1.4rem;
-    border-radius: 0.8rem;
-    gap: 1rem;
-}
-
-.wsp-icon {
-    width: 1.8rem; /* Icono proporcional */
-    height: 1.8rem;
 }
 
 /* Laptops (a partir de 1180px) */
@@ -974,6 +837,7 @@ footer {
         width: 4vw;
         height: 4vw;
     }
+
 }
 
 @media screen and (min-width: 769px) and (max-width: 1179px) {
@@ -1126,17 +990,17 @@ footer {
 
     
     .contacto-section {
-        padding: 4rem 1.5rem; /* Ajuste de padding para móvil */
+        padding: 4rem 1.5rem; 
         min-height: auto;
     }
 
 .cards-container {
-        display: flex;             /* Usamos Flex en lugar de Grid en móviles */
-        flex-direction: column;    /* Forzamos una columna vertical */
-        gap: 3rem;                 /* 3rem (aprox 48px) de separación entre tarjetas */
+        display: flex;            
+        flex-direction: column;    
+        gap: 3rem;                
         width: 100%;
         padding: 0 1rem;
-        box-sizing: border-box;    /* Asegura que el padding no rompa el ancho */
+        box-sizing: border-box;   
     }
 
     .card {
