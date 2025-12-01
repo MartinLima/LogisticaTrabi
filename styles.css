@@ -148,8 +148,8 @@ span{
     text-transform: uppercase;
     line-height: 0.7em;
     text-shadow:
-        0 1px 2px rgba(0,0,0,0.25),
-        0 2px 4px rgba(0,0,0,0.20);
+        0 0 4px rgba(0,0,0,0.25),
+        0 2px 6px rgba(0,0,0,0.15);
     animation: fadeBlur 1.2s ease-out;
     position: relative;
 }
@@ -1041,12 +1041,11 @@ footer {
     }
 
     .Sl {
-        font-size: clamp(5rem, 16vw, 9rem);
         margin-top: 1.3em;
     }
 
     .Sl span {
-        font-size: 0.5em;
+        font-size: 0.6em;
         margin-top: 0.2em;
     }
 
