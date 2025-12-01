@@ -1106,7 +1106,7 @@ footer {
     }
 
     .Sl {
-        font-size: clamp(3rem, 18vw, 5rem);
+        font-size: clamp(3rem, 19vw, 6rem);
     }
 
     .hero {
@@ -1124,7 +1124,7 @@ footer {
 
     .Sl::before {
         bottom: -8vw;
-        left: calc(50% + 19vw);
+        left: calc(50% + 21vw);
         width: 10vw;
         height: 10vw;
     }
