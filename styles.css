@@ -604,30 +604,28 @@ p.description {
     stroke-width: 2;
 }
 
-/* --- Tipografía dentro de las tarjetas --- */
 .card h3 {
-    /* El texto escala entre 1.1rem y 1.3rem según la pantalla */
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     color: var(--color-text-dark);
     margin-bottom: 1rem;
     font-weight: 700;
     line-height: 1.3;
+    text-wrap: pretty;
 }
 
 .card p {
-    font-size: 1rem; /* Base legible para móviles */
+    font-size: 1rem; 
     color: var(--color-text-gray);
-    line-height: 1.6;
+    line-height: 1.4;
     margin: 0;
-    /* Margen extra abajo en la tarjeta destacada para que no tape la línea verde */
     padding-bottom: 0.5rem; 
 }
 
-/* --- Sección Botón WhatsApp Inferior --- */
+/*  Sección Botón WhatsApp Inferior  */
 .cta-container {
     text-align: center;
     width: 100%;
-    padding: 0 1rem; /* Evita que el texto toque los bordes en móviles muy pequeños */
+    padding: 0 1rem; 
 }
 
 .cta-text {
@@ -687,6 +685,10 @@ p.description {
 .wsp-icon {
     width: 1.8rem; /* Icono proporcional */
     height: 1.8rem;
+}
+
+.contacto-section {
+    text-wrap: pretty;
 }
 
 /* footer */
