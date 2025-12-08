@@ -249,6 +249,47 @@
                 </div>
             </div>
         </section>
+        
+        <section class="locations-section" id="cobertura">
+            <h3 class="trabajo">Trabajamos en las siguientes localidades</h3>
+            <div class="infinite-wrapper">
+        <div class="infinite-track" id="track">
+            
+            <article class="location-card">
+                <div class="location-icon">📍</div>
+                <h3>Colón</h3>
+                <span>Entre Ríos</span>
+            </article>
+
+            <article class="location-card">
+                <div class="location-icon">📍</div>
+                <h3>San Salvador</h3>
+                <span>Entre Ríos</span>
+            </article>
+
+            <article class="location-card">
+                <div class="location-icon">📍</div>
+                <h3>Concordia</h3>
+                <span>Entre Ríos</span>
+            </article>
+
+            <article class="location-card">
+                <div class="location-icon">📍</div>
+                <h3>Villaguay</h3>
+                <span>Entre Ríos</span>
+            </article>
+
+            <article class="location-card">
+                <div class="location-icon">📍</div>
+                <h3>C. del Uruguay</h3>
+                <span>Entre Ríos</span>
+            </article>
+            
+        </div>
+        <h5>y sus zonas intermedias</h5>
+    </div>
+</section>
+
 
         <div class="title-container">
             <h2 class="titulos">Contacto</h2>
@@ -333,6 +374,103 @@
                 navLinks.classList.remove('active');
                 hamburgerMenu.classList.remove('active');
             });
+        });
+
+    document.addEventListener("DOMContentLoaded", () => {
+            const track = document.getElementById('track');
+            const wrapper = document.querySelector('.infinite-wrapper');
+            
+            // 1. Clonar elementos para garantizar el infinito visual
+            // Necesitamos suficientes clones para llenar la pantalla y tener buffer a los lados
+            const originalItems = Array.from(track.children);
+            
+            // Clonamos 2 veces (tenemos: Original + Clon1 + Clon2) para tener margen de sobra
+            // Esto asegura que nunca se vea un espacio vacío al arrastrar rápido
+            originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+            originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+
+            // CONFIGURACIÓN
+            let position = 0; // Posición actual en X
+            const speed = 0.5; // Velocidad automática
+            let isDragging = false;
+            let startX = 0;
+            let lastX = 0;
+            let animationID;
+
+            // Calculamos el ancho de UN set de elementos (incluyendo el gap)
+            // Necesitamos saber cuánto mide el grupo original para saber cuándo resetear
+            function getSingleSetWidth() {
+                const gap = 32; // 2rem = 32px aprox (ajustar si cambias el CSS)
+                let width = 0;
+                originalItems.forEach(item => {
+                    width += item.offsetWidth + gap;
+                });
+                return width;
+            }
+
+            let singleSetWidth = getSingleSetWidth();
+
+            // Recalcular si cambian el tamaño de ventana
+            window.addEventListener('resize', () => {
+                singleSetWidth = getSingleSetWidth();
+            });
+
+            // BUCLE PRINCIPAL DE ANIMACIÓN
+            function animate() {
+                // Si no estamos arrastrando, se mueve solo
+                if (!isDragging) {
+                    position -= speed;
+                }
+
+                // LÓGICA INFINITA (El truco matemático)
+                // Si nos pasamos hacia la izquierda del ancho de un set, sumamos el ancho
+                if (position <= -singleSetWidth) {
+                    position += singleSetWidth;
+                }
+                // Si nos pasamos hacia la derecha (arrastrando), restamos el ancho
+                else if (position > 0) {
+                    position -= singleSetWidth;
+                }
+
+                // Aplicar movimiento
+                track.style.transform = `translateX(${position}px)`;
+
+                animationID = requestAnimationFrame(animate);
+            }
+
+            // Iniciar animación
+            animate();
+
+            // --- EVENTOS DE ARRASTRE (MOUSE Y TACTIL) ---
+
+            const startDrag = (x) => {
+                isDragging = true;
+                startX = x;
+                lastX = x;
+                wrapper.style.cursor = 'grabbing';
+            };
+
+            const moveDrag = (x) => {
+                if (!isDragging) return;
+                const diff = x - lastX; // Cuánto movió el dedo desde el último frame
+                position += diff; // Sumamos directamente a la posición
+                lastX = x; // Actualizamos para el siguiente frame
+            };
+
+            const endDrag = () => {
+                isDragging = false;
+                wrapper.style.cursor = 'grab';
+            };
+
+            // Mouse Events
+            wrapper.addEventListener('mousedown', e => startDrag(e.pageX));
+            window.addEventListener('mousemove', e => moveDrag(e.pageX)); // Window para no perderlo si sale del div
+            window.addEventListener('mouseup', endDrag);
+
+            // Touch Events (Celular)
+            wrapper.addEventListener('touchstart', e => startDrag(e.touches[0].pageX));
+            wrapper.addEventListener('touchmove', e => moveDrag(e.touches[0].pageX));
+            wrapper.addEventListener('touchend', endDrag);
         });
     </script>
 </body>
